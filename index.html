@@ -238,7 +238,9 @@
                             <textarea name="message" id="message" class="contact-form-field" rows="4" required>
                             </textarea>
                         </div>
-                        <button class="btn btn-blue-fill" type="button" onClick="submitForm()">Send Your Message</button>
+                        <button id="btnSpinner" class="btn btn-blue-fill" type="button" onClick="submitForm()">
+                            <span class="btn-spinner">Send Message</span>
+                        </button>
                     </form>
                 
                 </div>
@@ -313,16 +315,30 @@
 
         function submitForm() {
             if(validateForm()){ 
-            fetch('process_contact_form.php', {
-                method: 'POST',
-                body: new FormData(document.getElementById('contactForm')),
+                startSpinner('btnSpinner');
+                fetch('process_contact_form.php', {
+                    method: 'POST',
+                    body: new FormData(document.getElementById('contactForm')),
             })
             .then(response => response.json())
             .then(data => {
+                stopSpinner('btnSpinner');
                 showMessage(data.message, data.success);
                 clearInputFields();
             })
             .catch(error => console.error('Error:', error));
+            }
+        }
+
+        function startSpinner(elementId) {
+            var element = document.getElementById(elementId);
+            element.classList.add('btn-loading');
+        }
+
+        function stopSpinner(elementId) {
+            var element = document.getElementById(elementId);
+            if(element.classList.contains('btn-loading')){ 
+            element.classList.remove('btn-loading');
             }
         }
     </script>

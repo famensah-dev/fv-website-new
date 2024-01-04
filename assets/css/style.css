@@ -270,6 +270,57 @@ nav a.active {
     color: var(--blue);
     border: 1px solid var(--blue);
 }
+.btn:active{
+    background-color: var(--dark);
+}
+.btn-spinner{
+    transition: all 0.2s; 
+}
+.btn-loading .btn-spinner{
+    visibility: hidden;
+    opacity: 0;
+}
+.btn-loading::before{
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid var(--light);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { 
+        transform: rotate(0turn)
+    }
+    100% { 
+        transform: rotate(1turn)
+    }
+  }
+
+.btn .spinner{
+    visibility: hidden;
+    opacity: 0;
+}
+.spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid #3498db;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+  }
 .hr{
     width: 2.5rem;
     border: none;
