@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fruitful Vine Home Care</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="./assets/css/style.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +15,7 @@
     <script src="./assets/js/main.js" defer></script>
 </head>
 <body>
-    <section class="topnav">
+    <section id="home" class="topnav">
         <div class="container flex">
             <ul class="contact-links flex gap-md">
                 <li>
@@ -39,18 +40,54 @@
     <nav id="navbar" class="nav">
         <div class="container space-between">
             <div class="flex">
-                <i class="uil uil-bars" id="nav-menu-icon"></i>
+                <!-- <span id="nav-menu-icon">
+                    <i class="uil uil-bars"></i>
+                </span> -->
+
+                <div class="menu-btn">
+                    <span class="menu-btn-icon"></span>
+                </div>
+
                 <p id="logo">Logo</p>
             </div>
             <ul class="navlinks flex gap-md">
-                <li><a href="home" class="active">Home</a></li>
-                <li><a href="about">About</a></li>
-                <li><a href="services">Services</a></li>
-                <li><a href="contact">Contact</a></li>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
             <i class="uil uil-ellipsis-v" id="topnav-menu-icon"></i>
         </div>
     </nav>
+    <div class="responsive-nav">
+        <div class="alt-topnav">
+            <ul class="contact-links flex gap-md">
+                <li>
+                    <span><i class="uil uil-phone-alt"></i></span>
+                    <span>+233 564 871 109</span>
+                </li>
+                <li>
+                    <span><i class="uil uil-map-marker"></i></span>
+                    <span>Location, Area City</span>
+                </li>
+            </ul>
+
+            <ul class="social-media-links flex gap">
+                <li><i class="uil uil-facebook-f"></i></li>
+                <li><i class="uil uil-twitter"></i></li>
+                <li><i class="uil uil-instagram"></i></li>
+                <li><i class="uil uil-whatsapp"></i></li>
+            </ul>
+        </div>
+        <div id="nav-menu">
+            <ul class="gap-md">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
 
     <div id="alertBox">
         <!-- <span class="validation-success-icon"><i class="uil uil-exclamation-circle"></i></span>
@@ -58,8 +95,9 @@
     </div>
 
     <section class="hero container">
-        <div class="content flex-col">
-            <h1 class="h-sm"> Welcome to MedCare Clinic</h1>
+        <div class="content flex-col align-center">
+            <h1 class="h-sm"> Fruitful Vine Home Care</h1>
+            <hr class="hr hr-yellow">
             <h2 class="h-xl"> Cultivating wellness in the comfort of your home</h2>
             <div class="hero-buttons">
                 <a class="btn btn-blue-fill" href="#">Learn More</a>
@@ -100,7 +138,7 @@
     <!-- <MAIN> -->
     <main>
         <!-- ABOUT -->
-        <section class="about container row gap-md">
+        <section id="about" class="about container row gap-md">
             <div class="content flex-col flex-grow gap-lg">
                 <div class="flex-col gap">
                     <h2 class="h-xs text-blue">About Us</h2>
@@ -108,6 +146,11 @@
                     <h3 class="h-lg text-blue">Fostering Wellbeing in Your Home's Comfort</h3>
                     <p>Fruitful Vine Home Care envisions a world where everyone can age gracefully and thrive in the familiar embrace of their own homes. We are dedicated to providing high-quality, compassionate care that nourishes the physical, emotional, and social well-being of our clients.</p>
                 </div>
+                <!-- <div>
+                    <a href="./pages/about.html">
+                        <button class="btn btn-blue-outline">More About Us</button>
+                    </a>
+                </div> -->
                 <div class="flex-col gap">
                     <h2 class="h-md text-blue">Our Mission</h2>
                     <p>To cultivate a nurturing environment where individuals can blossom and flourish, regardless of their age or health challenges. We believe in the power of personalized care, delivered with empathy and respect, to empower individuals to live life to the fullest.</p>
@@ -119,7 +162,7 @@
         <!-- END OF ABOUT -->
 
         <!-- SERVICES -->
-        <section class="services">
+        <section id="services" class="services">
             <div class="content container flex-col gap-lg">
                 <div class="text-center flex-col">
                     <h2 class="h-xs text-blue">Our Services</h2>
@@ -138,7 +181,6 @@
                     <div class="card flex-col gap">
                         <div>
                             <i class="uil uil-clinic-medical"></i>
-                        
                         </div>
                         <h3 class="h-md text-blue">Home Health Aide Services</h3>
                         <p>Our compassionate aides assist with daily living activities such as bathing, dressing, meal preparation, and light housekeeping.</p>
@@ -188,10 +230,10 @@
         <!-- END OF SERVICES -->
 
         <!-- WHY US -->
-        <section class="contact-us">
+        <section id="contact" class="contact-us">
             <div class="container flex-col gap-lg align-center">
                 <div class="text-center flex-col gap">
-                    <h2 class="h-sm">Contact Us</h2>
+                    <h2 class="h-sm text-blue">Contact Us</h2>
                     <hr class="hr-md hr-yellow align-self-center">
                     <h3 class="h-lg text-blue">Connecting for Your Loved One's Wellbeing</h3>
                 </div>
@@ -341,6 +383,13 @@
             element.classList.remove('btn-loading');
             }
         }
+        
     </script>
+
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+     </script> -->
+    
 </body>
 </html>
