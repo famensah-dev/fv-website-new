@@ -2,10 +2,13 @@ document.addEventListener('DOMContentLoaded', function () {
   const currentUrl = window.location.href;  
   const navbar = document.getElementById('navbar');
   const navLinks = document.querySelectorAll('nav a');
-  
+  const navMenuLinks = document.querySelectorAll('#nav-menu a');
+
   navLinks.forEach(el => el.addEventListener('click', scrollToSection));
+  navMenuLinks.forEach(el => el.addEventListener('click', scrollToSection));
 
   function scrollToSection(event){
+    closeNavMenu();
     smoothScroll(event);
   }
 
@@ -73,9 +76,35 @@ document.addEventListener('DOMContentLoaded', function () {
         navMenu.classList.add('open')
         menuOpen = true;
       }else{
-        menuBtn.classList.remove('open');
+        menuBtn.classList.remove('open')
         navMenu.classList.remove('open')
         menuOpen = false;
+      }
+    })
+
+    function closeNavMenu(){
+      if(navMenu.classList.contains('open'))
+      {
+        menuBtn.classList.remove('open')
+        navMenu.classList.remove('open')
+        menuOpen = false;
+      }
+    }
+  
+
+    const topnavBtn = document.querySelector('#topnav-menu-icon');
+    const topnavMenu = document.querySelector('.alt-topnav');
+    let topnavMenuOpen = false;
+    
+    topnavBtn.addEventListener('click', function(){
+      if(!topnavMenuOpen){
+        topnavBtn.classList.add('open')
+        topnavMenu.classList.add('open')
+        topnavMenuOpen = true;
+      }else{
+        topnavBtn.classList.remove('open');
+        topnavMenu.classList.remove('open')
+        topnavMenuOpen = false;
       }
     })
 
