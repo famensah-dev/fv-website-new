@@ -452,6 +452,9 @@ a .btn {
 .flex-grow{
     flex: 1;
 }
+.flex-grow-2{
+    flex: 2;
+}
 .services{
     padding: 6rem 0;
     /* background-color: var(--light); */
@@ -577,6 +580,53 @@ a .btn {
     color: var(--light-blue);
 }
 
+footer{
+    width: 100%;
+    padding-top: 4rem;
+    background-color: var(--dark-3);
+    color: white;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+footer .content{
+    display: flex;
+    align-items: start;
+}
+footer .content ul li{
+    padding: .5rem 0;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+footer .content ul li:hover{
+    color: var(--yellow);
+}
+footer .content ul li::after{
+    content: '   \00BB';
+    vertical-align: center;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+}
+footer .content ul li:hover::after{
+    opacity: 1;
+}
+footer .claims{
+    padding-bottom: 1rem;
+}
+ 
+.scroll-up-btn{
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 2rem;
+    position: fixed;
+    z-index: 10;
+    right: 1rem;
+    bottom: 1rem;
+    opacity: .5;
+    transition: opacity .5s ease-in-out;
+}
+
 
 
 
@@ -700,6 +750,7 @@ a .btn {
     }
     .hero .content{
         width: 100%;
+        padding: 4rem 5rem;
         align-items: center;
         text-align: center;
     }
