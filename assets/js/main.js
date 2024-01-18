@@ -108,6 +108,22 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     })
 
+    const currentDate = new Date();
+    const currentDateElement = document.getElementById('currentDate');
+    currentDateElement.textContent = currentDate.getFullYear();
+
+
+     // Get the scroll-up button element
+     const scrollUpBtn = document.getElementById("scrollUpBtn");
+    scrollUpBtn.addEventListener('click', scrollToSection)
+
+     window.onscroll = function() {
+       if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+         scrollUpBtn.classList.add('fade-in');
+       } else {
+        scrollUpBtn.classList.remove('fade-in');
+      }
+     };
 
     window.addEventListener('scroll', function () {
       if (window.scrollY > navbar.offsetHeight) {

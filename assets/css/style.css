@@ -10,7 +10,7 @@
     /* --turq: #03cee1;  */
     --turq: #05cca2;
     --light-blue: #346bae;
-    --light: #e4ecee;
+    --light: #edf4f6;
     --test: 2px solid red;
     --shadow-1: #959da533 0px 8px 24px;
 }
@@ -508,6 +508,15 @@ a .btn {
 .contact-us .contact-info span{
     font-size: 1.1rem;
 }
+.contact-us{
+    background-color: var(--light);
+}
+.contact-us input, .contact-us textarea{
+    background-color: transparent;
+}
+.contact-us .content{
+    background-color: #ffffffe4;
+}
 .form{
     display: flex;
     flex-direction: column;
@@ -612,22 +621,40 @@ footer .content ul li:hover::after{
 footer .claims{
     padding-bottom: 1rem;
 }
- 
 .scroll-up-btn{
-    width: 3rem;
-    height: 3rem;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    padding: 0;
+    color: white;
     border-radius: 50%;
-    font-size: 2rem;
+    font-size: 3rem;
     position: fixed;
     z-index: 10;
     right: 1rem;
     bottom: 1rem;
-    opacity: .5;
-    transition: opacity .5s ease-in-out;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.scroll-up-btn i{
+    vertical-align: center;
+}
+.scroll-up-btn:hover{
+    background-color: var(--dark-2);
+}
+.scroll-up-btn.fade-in{
+    opacity: 1;
 }
 
-
+.test{
+    height: 20vh;
+    width: 100%;
+    background-color: var(--light);
+}
 
 
 
@@ -772,6 +799,9 @@ footer .claims{
     .services{
         padding: 2rem 0;
     }
+    .services .content.row .card{
+        flex: 1 0 calc(50% - 1rem);
+    }
     .contact-us .content{
         flex-direction: column-reverse;
     }
@@ -805,6 +835,9 @@ footer .claims{
     .validation-success-icon{
         padding: .7rem 0;
     }  
+    footer .content{
+        flex-wrap: wrap;
+    }
 }
 
 
@@ -850,15 +883,26 @@ footer .claims{
     .gap-lg{
         gap: 2rem;
     }
-    .services .content .card,
-    .services .content .card:last-child{
+    .services .content.row .card,
+    .services .content.row .card:last-child{
         padding: 1rem;
         align-items: center;
         text-align: center;
-        flex: 1;
+        flex:0 0 100%;
     }
     .contact-us .content{
         padding: 2rem 1rem;
+    }
+    footer{
+        text-align: center;
+        font-size: 1rem; 
+    }
+    footer .content{
+        flex-direction: column;
+        align-items: center;
+    }
+    footer hr{
+        align-self: center;
     }
 }
 
