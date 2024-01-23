@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const appearOptions = {
     threshold: 0,
-    rootMargin: "0px 0px -80px 0px"
+    rootMargin: "0px 400px 0px 400px"
+    // rootMargin: "0px 0px 400px 0px"
   };
 
   const appearOnScroll = new IntersectionObserver(
