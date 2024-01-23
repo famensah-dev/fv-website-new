@@ -4,6 +4,35 @@ document.addEventListener('DOMContentLoaded', function () {
   const navLinks = document.querySelectorAll('nav a');
   const navMenuLinks = document.querySelectorAll('#nav-menu a');
 
+  const faders = document.querySelectorAll('.fade-in');
+  const sliders = document.querySelectorAll('.slide-in');
+
+  const appearOptions = {
+    threshold: 0,
+    rootMargin: "0px 0px -80px 0px"
+  };
+
+  const appearOnScroll = new IntersectionObserver(
+    function(entries, appearOnScroll){
+      entries.forEach(entry => {
+        if(!entry.isIntersecting){
+          return;
+        }else{
+          entry.target.classList.add('appear');
+          appearOnScroll.unobserve(entry.target);
+        }
+      })
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+
+    sliders.forEach(slider => {
+      appearOnScroll.observe(slider);
+    })
+
+
   navLinks.forEach(el => el.addEventListener('click', scrollToSection));
   navMenuLinks.forEach(el => el.addEventListener('click', scrollToSection));
 
@@ -91,7 +120,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   
-
     const topnavBtn = document.querySelector('#topnav-menu-icon');
     const topnavMenu = document.querySelector('.alt-topnav');
     let topnavMenuOpen = false;
@@ -108,13 +136,24 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     })
 
+    // close nav menu when user clicks outside of it
+    document.addEventListener('click', function(event) {
+      const isClickInsideNav = navMenu.contains(event.target);
+      const isClickOnMenuButton = menuBtn.contains(event.target);
+
+      if (!isClickInsideNav && ! isClickOnMenuButton) {
+        closeNavMenu();
+      }
+    });
+    
+    // keep the year in the footer up to date
     const currentDate = new Date();
     const currentDateElement = document.getElementById('currentDate');
     currentDateElement.textContent = currentDate.getFullYear();
 
 
-     // Get the scroll-up button element
-     const scrollUpBtn = document.getElementById("scrollUpBtn");
+    // Toggle the scroll-up button element
+    const scrollUpBtn = document.getElementById("scrollUpBtn");
     scrollUpBtn.addEventListener('click', scrollToSection)
 
      window.onscroll = function() {
