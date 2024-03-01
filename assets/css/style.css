@@ -194,6 +194,9 @@ nav a.active {
     font-family: "Asap", sans-serif;
     line-height: 1.2;
 }
+.services .card .h-md{
+    font-weight: 500;
+}
 .h-lg{
     font-weight: 700;
     font-size: 2.7rem;
@@ -205,6 +208,14 @@ nav a.active {
     font-size: 3.5rem;
     font-family: "Asap", sans-serif;
     line-height: 1.2;
+}
+.py-1{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.py-4{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
 }
 .hero{
     /* min-height: 70vh; */
@@ -292,7 +303,7 @@ nav a.active {
     border-color: var(--blue);
 }
 .hero-card:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: var(--shadow-1);
 }
 a .btn {
@@ -438,6 +449,9 @@ a .btn {
 .text-blue{
     color: var(--blue);
 }
+.text-white{
+    color: white;
+}
 .text-center{
     text-align: center;
 }
@@ -457,8 +471,10 @@ a .btn {
     color: var(--dark);
 }
 .image-container{
+    width: 150px;
+    min-height: 50vh;
     border-radius: 50% 0 50% 0rem;
-    background-image: url("../img/img-1.jpg");
+    /* background-image: url("../img/img-1.jpg"); */
     background-size: cover;
     background-position: center;
 }
@@ -467,6 +483,12 @@ a .btn {
 }
 .flex-grow-2{
     flex: 2;
+}
+.flex-reverse{
+    flex-direction: row-reverse;
+}
+.overflow-hidden{
+    overflow: hidden;
 }
 .services{
     padding: 6rem 0;
@@ -481,10 +503,22 @@ a .btn {
     cursor: default;
     transition: transform 0.5s ease;
 }
-.services .content .card:hover{
-    box-shadow: #959da533 0px 8px 24px;
-    transform: scale(1.1);
+.services .content .card div{
+    width: fit-content;
+    transform: scale(1);
+    transition: transform 0.5s linear;
+}
+.services .content .card:hover div{
+    animation: zoomInOut 1s infinite alternate;
 
+}
+@keyframes zoomInOut {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.5);
+    }
 }
 .services .content .card:last-child {
     flex: 1 0 calc(33.33% - 20px); /* Maintain base width, don't grow, don't shrink */
@@ -501,18 +535,33 @@ a .btn {
     font-size: 2.5rem;
     color: var(--yellow);
 }
+.services .card:hover{
+    border: 1px solid var(--blue);
+}
+p{
+    font-size: 1.3rem !important;
+    font-weight: 200 !important;
+}
 .contact-us{
+    min-height: 100vh;
     padding: 4rem 0;
-    background-image: url('../assets/img/img-1.jpg');
+    /* border: 1px solid red; */
+}
+.contact-bg-image{
+    height: 80vh;
+    background-image: url('../img/img-3.jpg');
     background-repeat: no-repeat;
-    background-position-y: center;
+    background-attachment: fixed;
+    background-color: #434343;
+    background-blend-mode: overlay;
+    position: relative;
 }
 .contact-us .content{
     width: 100%;
     padding: 3rem;
     color: var(--dark);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    position: relative;
+    margin-bottom: 4rem;
 }
 .contact-us .contact-info i{
     font-size: 1.5rem;
@@ -521,14 +570,14 @@ a .btn {
 .contact-us .contact-info span{
     font-size: 1.1rem;
 }
-.contact-us{
+/* .contact-us{
     background-color: var(--light);
-}
+} */
 .contact-us input, .contact-us textarea{
     background-color: transparent;
 }
 .contact-us .content{
-    background-color: #ffffffe4;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 .form{
     display: flex;
@@ -633,6 +682,7 @@ footer .content ul li:hover::after{
 }
 footer .claims{
     padding-bottom: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.216);
 }
 .scroll-up-btn{
     width: 4rem;
@@ -860,7 +910,7 @@ footer .claims{
         height: 180px;
     }
     .h-sm{
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
     .h-md{
         font-size: 1.5rem;
