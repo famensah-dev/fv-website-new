@@ -180,6 +180,10 @@ nav a.active {
 #nav-menu ul:last-child{
     padding-bottom: 2rem;
 }
+#logo img{
+    width: 150px; /* Set the width to 200 pixels */
+    height: auto;
+}
 .h-xs{
     font-weight: 300;
     font-size: 1.2rem;
@@ -900,6 +904,10 @@ footer .claims{
     /* #nav-menu.open ul{
         padding: 1rem 0;
     } */
+    #logo img{
+        width: 100px; /* Set the width to 200 pixels */
+        height: auto;
+    }
     .alt-topnav .contact-links,
     .alt-topnav .social-media-links
     {
